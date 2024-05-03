@@ -3,6 +3,7 @@ class Post < ApplicationRecord
 
   before_create :generate_qrcode
   before_update :regenerate_qrcode, if: :title_changed?
+  before_destroy :purge_attached_qrcode
 
   private
 
@@ -13,6 +14,10 @@ class Post < ApplicationRecord
   def regenerate_qrcode
     qrcode.purge if qrcode.attached?
     generate_and_attach_qrcode
+  end
+
+  def purge_attached_qrcode
+    qrcode.purge if qrcode.attached?
   end
 
   def generate_and_attach_qrcode

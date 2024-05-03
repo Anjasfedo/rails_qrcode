@@ -5,3 +5,5 @@ pin "@hotwired/turbo-rails", to: "turbo.min.js"
 pin "@hotwired/stimulus", to: "stimulus.min.js"
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"
 pin_all_from "app/javascript/controllers", under: "controllers"
+pin "@zxing/library", to: "@zxing--library.js" # @0.21.0
+pin "ts-custom-error" # @3.3.1

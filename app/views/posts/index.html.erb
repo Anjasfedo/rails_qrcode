@@ -2,6 +2,10 @@
 
 <h1>Posts</h1>
 
+<div data-controller="qr-code">
+  <video id="video" autoplay></video>
+</div>
+
 <div id="posts">
   <% @posts.each do |post| %>
     <%= render post %>
