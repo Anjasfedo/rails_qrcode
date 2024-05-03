@@ -1,10 +1,10 @@
 import { Controller } from "@hotwired/stimulus";
 
-import ZXing from "@zxing/library";
+import { BrowserQRCodeReader } from "@zxing/library";
 
 export default class extends Controller {
   connect() {
-    const codeReader = new ZXing.BrowserQRCodeReader();
+    const codeReader = new BrowserQRCodeReader();
     codeReader
       .getVideoInputDevices()
       .then((videoInputDevices) => {
